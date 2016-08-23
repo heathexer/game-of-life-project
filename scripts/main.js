@@ -4,6 +4,8 @@ var canvas = c.getContext('2d');
 var canvasWidth = c.width;
 var canvasHeight = c.height;
 canvas.lineWidth = 1;
+canvas.globalAlpha = 1.0;
+canvas.imageSmoothingEnable = false;
 var pixelsWide = 25;
 var pixels = new Array(pixelsWide);
 var pixelWidth = canvasWidth/pixelsWide;
@@ -16,11 +18,10 @@ function Pixel(posX, posY) {
     this.draw = function() {
         if(this.alive) {
             canvas.fillStyle = "black";
-            canvas.fillRect(this.x, this.y, pixelWidth, pixelWidth);
         } else {
             canvas.fillStyle = "white";
-            canvas.fillRect(this.x, this.y, pixelWidth, pixelWidth);
         }
+        canvas.fillRect(this.x, this.y, pixelWidth, pixelWidth);
         drawLines();
     }
     this.toggle = function() {
@@ -71,6 +72,8 @@ function click() {
     var pixelX = Math.floor(getMousePos().x/pixelWidth);
     var pixelY = Math.floor(getMousePos().y/pixelWidth);
     pixels[pixelX][pixelY].toggle();
+    drawLines();
 }
 generatePixels();
+drawLines();
 c.addEventListener("click", click);
