@@ -1,36 +1,76 @@
 var c = document.getElementById("mainCanvas");
 var canvas = c.getContext('2d');
 
-var canvasWidth = document.getElementById("mainCanvas").getAttribute("width");
-var pixelsWide = 10;
+var canvasWidth = c.width;
+var canvasHeight = c.height;
+canvas.lineWidth = 1;
+var pixelsWide = 25;
 var pixels = new Array(pixelsWide);
 var pixelWidth = canvasWidth/pixelsWide;
+var running = false;
 
-
-var Pixel = function(posX, posY){
+function Pixel(posX, posY) {
     this.x = posX;
     this.y = posY;
+    this.alive = false;
     this.draw = function() {
-        canvas.strokeRect(this.x, this.y, pixelWidth, pixelWidth);
+        if(this.alive) {
+            canvas.fillStyle = "black";
+            canvas.fillRect(this.x, this.y, pixelWidth, pixelWidth);
+        } else {
+            canvas.fillStyle = "white";
+            canvas.fillRect(this.x, this.y, pixelWidth, pixelWidth);
+        }
+        drawLines();
+    }
+    this.toggle = function() {
+        if(this.alive) {
+            this.alive = false;
+        } else {
+            this.alive = true;
+        }
+        this.draw();
     }
 };
 function generatePixels() {
     for(var i = 0; i<pixelsWide; i++) {
         pixels[i] = new Array(pixelsWide);
         for(var j = 0; j<pixelsWide; j++) {
-            pixels[i][j] =  new Pixel(i*pixelWidth, j*pixelWidth);
+            pixels[i][j] =  new Pixel(i*(pixelWidth), j*(pixelWidth));
             pixels[i][j].draw();
         }
     }
 }
-
-function getMousePos() {
-    var mouseX =  event.clientX - c.offsetLeft;
-    var mouseY =  event.clientY - c.offsetTop;
+function drawLines() {
+    canvas.strokeStyle = "gray";
+    for(var i=pixelWidth; i<canvasWidth; i+=pixelWidth) {
+        canvas.beginPath();
+        canvas.moveTo(i, 0);
+        canvas.lineTo(i, canvasHeight);
+        canvas.stroke();
+    }
+    for(var i=pixelWidth; i<canvasHeight; i+=pixelWidth) {
+        canvas.beginPath();
+        canvas.moveTo(0, i);
+        canvas.lineTo(canvasWidth, i);
+        canvas.stroke();
+    }
 }
 
+while(running) {
+    
+}
+
+function getMousePos() {
+    return {
+        x: event.clientX - c.offsetLeft,
+        y: event.clientY - c.offsetTop
+    }
+}
 function click() {
-    alert(getMousePos());
+    var pixelX = Math.floor(getMousePos().x/pixelWidth);
+    var pixelY = Math.floor(getMousePos().y/pixelWidth);
+    pixels[pixelX][pixelY].toggle();
 }
 generatePixels();
 c.addEventListener("click", click);
