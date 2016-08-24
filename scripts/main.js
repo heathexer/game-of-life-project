@@ -91,6 +91,9 @@ function Pixel(posX, posY, row, column) {
 
         return this.numNeighbors;
     }
+    this.checkRules = function() {
+        
+    }
 }
 function generatePixels() {
     for(var i = 0; i<pixelsWide; i++) {
