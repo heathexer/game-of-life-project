@@ -1,5 +1,6 @@
 canvas {
     position: relative;
+    image-rendering: pixelated;
 }
 .startButton {
     width:90px;
