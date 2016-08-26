@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dbcfe87-0660-486b-b28f-043ba539b0c0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Capture.PNG" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.css" afterPath="$PROJECT_DIR$/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
@@ -43,16 +42,12 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="112">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
               <folding>
-                <element signature="n#!!block;n#Pixel#0" expanded="false" />
-                <element signature="e#616#841#0" expanded="false" />
-                <element signature="e#1055#2614#0" expanded="false" />
+                <element signature="e#1017#2576#0" expanded="false" />
+                <element signature="e#2610#2844#0" expanded="false" />
                 <element signature="n#!!block;n#generatePixels#0" expanded="false" />
-                <element signature="n#!!block;n#drawLines#0" expanded="false" />
-                <element signature="n#!!block;n#start#0" expanded="false" />
-                <element signature="n#!!block;n#run#0" expanded="false" />
                 <element signature="n#!!block;n#getMousePos#0" expanded="false" />
                 <element signature="n#!!block;n#click#0" expanded="false" />
               </folding>
@@ -63,8 +58,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="84">
+              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -91,6 +86,9 @@
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
+    <push-targets>
+      <push-target-info repo="$PROJECT_DIR$" source="development" target-remote="origin" target-branch="master" />
+    </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -277,7 +275,7 @@
       <workItem from="1471811218450" duration="1576000" />
       <workItem from="1471812806234" duration="13270000" />
       <workItem from="1471835118370" duration="10759000" />
-      <workItem from="1471995898714" duration="10227000" />
+      <workItem from="1471995898714" duration="13926000" />
     </task>
     <task id="LOCAL-00001" summary="Update but still isn't finished">
       <created>1471839459216</created>
@@ -300,11 +298,25 @@
       <option name="project" value="LOCAL" />
       <updated>1471996318598</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cells can now check how many live neighbors they have">
+      <created>1472012667358</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472012667358</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Finally works as Conway's game of life, but is very slow">
+      <created>1472184488228</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1472184488228</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35832000" />
+    <option name="totallyTimeSpent" value="39531000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -370,11 +382,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update but still isn't finished" />
     <MESSAGE value="Added the ability to manually toggle cells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the ability to manually toggle cells" />
+    <MESSAGE value="Cells can now check how many live neighbors they have" />
+    <MESSAGE value="Finally works as Conway's game of life, but is very slow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally works as Conway's game of life, but is very slow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -394,13 +408,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#Pixel#0" expanded="false" />
-            <element signature="e#616#841#0" expanded="false" />
-            <element signature="e#1055#2614#0" expanded="false" />
+            <element signature="e#1017#2576#0" expanded="false" />
+            <element signature="e#2610#2844#0" expanded="false" />
             <element signature="n#!!block;n#generatePixels#0" expanded="false" />
-            <element signature="n#!!block;n#drawLines#0" expanded="false" />
-            <element signature="n#!!block;n#start#0" expanded="false" />
-            <element signature="n#!!block;n#run#0" expanded="false" />
             <element signature="n#!!block;n#getMousePos#0" expanded="false" />
             <element signature="n#!!block;n#click#0" expanded="false" />
           </folding>
@@ -438,13 +448,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#Pixel#0" expanded="false" />
-            <element signature="e#616#841#0" expanded="false" />
-            <element signature="e#1055#2614#0" expanded="false" />
+            <element signature="e#1017#2576#0" expanded="false" />
+            <element signature="e#2610#2844#0" expanded="false" />
             <element signature="n#!!block;n#generatePixels#0" expanded="false" />
-            <element signature="n#!!block;n#drawLines#0" expanded="false" />
-            <element signature="n#!!block;n#start#0" expanded="false" />
-            <element signature="n#!!block;n#run#0" expanded="false" />
             <element signature="n#!!block;n#getMousePos#0" expanded="false" />
             <element signature="n#!!block;n#click#0" expanded="false" />
           </folding>
@@ -466,13 +472,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#Pixel#0" expanded="false" />
-            <element signature="e#616#841#0" expanded="false" />
-            <element signature="e#1055#2614#0" expanded="false" />
+            <element signature="e#1017#2576#0" expanded="false" />
+            <element signature="e#2610#2844#0" expanded="false" />
             <element signature="n#!!block;n#generatePixels#0" expanded="false" />
-            <element signature="n#!!block;n#drawLines#0" expanded="false" />
-            <element signature="n#!!block;n#start#0" expanded="false" />
-            <element signature="n#!!block;n#run#0" expanded="false" />
             <element signature="n#!!block;n#getMousePos#0" expanded="false" />
             <element signature="n#!!block;n#click#0" expanded="false" />
           </folding>
@@ -480,14 +482,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asd" />
-    <entry file="file://$PROJECT_DIR$/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -498,18 +492,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="112">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding>
-            <element signature="n#!!block;n#Pixel#0" expanded="false" />
-            <element signature="e#616#841#0" expanded="false" />
-            <element signature="e#1055#2614#0" expanded="false" />
+            <element signature="e#1017#2576#0" expanded="false" />
+            <element signature="e#2610#2844#0" expanded="false" />
             <element signature="n#!!block;n#generatePixels#0" expanded="false" />
-            <element signature="n#!!block;n#drawLines#0" expanded="false" />
-            <element signature="n#!!block;n#start#0" expanded="false" />
-            <element signature="n#!!block;n#run#0" expanded="false" />
             <element signature="n#!!block;n#getMousePos#0" expanded="false" />
             <element signature="n#!!block;n#click#0" expanded="false" />
           </folding>

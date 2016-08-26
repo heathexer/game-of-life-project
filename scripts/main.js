@@ -2,12 +2,11 @@ var c = document.getElementById("mainCanvas");
 var canvas = c.getContext('2d');
 document.getElementById("start").onclick = start;
 
-var runSpeed = 100;
+var runSpeed = 1;
 var canvasWidth = c.width;
 var canvasHeight = c.height;
 canvas.lineWidth = 0.5;
 canvas.globalAlpha = 1.0;
-canvas.imageSmoothingEnable = false;
 var pixelsWide = 25;
 var pixels = new Array(pixelsWide);
 var pixelWidth = canvasWidth/pixelsWide;
@@ -110,18 +109,16 @@ function generatePixels() {
 }
 function drawLines() {
     canvas.strokeStyle = "gray";
+    canvas.beginPath();
     for(var i=pixelWidth; i<canvasWidth; i+=pixelWidth) {
-        canvas.beginPath();
         canvas.moveTo(i, 0);
         canvas.lineTo(i, canvasHeight);
-        canvas.stroke();
     }
     for(var i=pixelWidth; i<canvasHeight; i+=pixelWidth) {
-        canvas.beginPath();
         canvas.moveTo(0, i);
         canvas.lineTo(canvasWidth, i);
-        canvas.stroke();
     }
+    canvas.stroke();
 }
 function start() {
     if(running) {
