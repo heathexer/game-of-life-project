@@ -2,13 +2,13 @@ var c = document.getElementById("mainCanvas");
 var canvas = c.getContext('2d');
 document.getElementById("start").onclick = start;
 
-var runSpeed = 1;
+var runSpeed = 100;
 var canvasWidth = c.width;
 var canvasHeight = c.height;
 canvas.lineWidth = 0.5;
 canvas.globalAlpha = 1.0;
 canvas.imageSmoothingEnable = false;
-var pixelsWide = 10;
+var pixelsWide = 25;
 var pixels = new Array(pixelsWide);
 var pixelWidth = canvasWidth/pixelsWide;
 var running = false;
@@ -37,7 +37,6 @@ function Pixel(posX, posY, row, column) {
         }
         this.draw();
     };
-
     this.checkNeighbors = function() {
         this.numNeighbors = 0;
         //North
@@ -91,6 +90,14 @@ function Pixel(posX, posY, row, column) {
 
         return this.numNeighbors;
     }
+    this.checkRules = function() {
+        if((this.numNeighbors < 2 && this.alive) || this.numNeighbors > 3 && this.alive) {
+            this.alive = false;
+        }
+        if(this.numNeighbors === 3 && !this.alive) {
+            this.alive = true;
+        }
+    }
 }
 function generatePixels() {
     for(var i = 0; i<pixelsWide; i++) {
@@ -122,10 +129,21 @@ function start() {
     } else {
         running = true;
     }
+
 }
 function run() {
     if(running) {
-
+        for(var i = 0; i<pixelsWide; i++) {
+            for(var j = 0; j<pixelsWide; j++) {
+                pixels[i][j].checkNeighbors();
+            }
+        }
+        for(var i = 0; i<pixelsWide; i++) {
+            for(var j = 0; j<pixelsWide; j++) {
+                pixels[i][j].checkRules();
+                pixels[i][j].draw();
+            }
+        }
     }
 }
 
@@ -143,5 +161,5 @@ function click() {
 }
 generatePixels();
 drawLines();
-setInterval(run(), 1000/runSpeed);
+setInterval(function(){run()}, 1000/runSpeed);
 c.addEventListener("click", click);
