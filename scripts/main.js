@@ -2,7 +2,7 @@ var c = document.getElementById("mainCanvas");
 var canvas = c.getContext('2d');
 document.getElementById("start").onclick = start;
 
-var runSpeed = 1;
+var runSpeed = 500;
 var canvasWidth = c.width;
 var canvasHeight = c.height;
 canvas.lineWidth = 0.5;
